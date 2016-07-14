@@ -1,0 +1,7 @@
+test\TestActualizarObjeto.class
+test\TestEliminarObjeto.class
+test\TestCascadaJPA.class
+test\TestEncontrarPersona.class
+test\PersonaServiceTest.class
+test\UsuarioServiceTest.class
+test\TestPersistirObjeto.class
