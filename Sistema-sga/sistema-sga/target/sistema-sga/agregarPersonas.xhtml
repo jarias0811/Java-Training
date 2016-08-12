@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Agregar Persona</title>
+</h:head>
+<h:body>
+
+	<p:ajaxStatus style="width:16px;height:16px;" id="ajaxStatusPanel">
+		<f:facet name="start">
+			<h:graphicImage library="images" name="ajaxloading.gif" />
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+
+	<h:form>
+		<p:panel id="panel" header="Agregar Persona">
+			<p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-10"
+				layout="grid" styleClass="ui-panelgrid-blank">
+
+				<h:outputLabel for="name" value="Nombre:" style="font-weight:bold" />
+				<p:inputText id="name" value="#{personaBean.nombre}" required ="true"/>
+
+				<h:outputLabel for="apePaterno" value="Apellido Paterno:"
+					style="font-weight:bold" />
+				<p:inputText id="apePaterno" value ="#{personaBean.apePaterno}" required = "true"/>
+
+				<h:outputLabel for="apeMaterno" value="Apellido Materno:"
+					style="font-weight:bold" />
+				<p:inputText id="apeMaterno" value ="#{personaBean.apeMaterno}"/>
+
+				<h:outputLabel for="email" value="email:" style="font-weight:bold" />
+				<p:inputText id="email" value ="#{personaBean.email}" required = "true"/>
+
+				<h:outputLabel for="telefono" value="Telefono:"
+					style="font-weight:bold" />
+				<p:inputText id="telefono" value ="#{personaBean.telefono}"/>
+				
+				<p:commandButton value="Save" action="listarPersonas" actionListener="#{personaBean.addListener}"/>
+
+			</p:panelGrid>
+		</p:panel>
+	</h:form>
+
+</h:body>
+</html>
